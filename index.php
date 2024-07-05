@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edit this template
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+<?php include "header.php"; ?>
+
+        <h1>Welcome to StoryShare!</h1>
+        <p>
+            At StoryShare, educators can find stories to add to any lessons. 
+            Sorted by topic, the stories are clear, well-written, and will make 
+            your classroom come alive. Start by searching for a story for any 
+            topic you'd like, or check out our featured stories.
+        </p>
+        <p>
+            Enjoyed using StoryShare? Benefitted from the stories that helped your 
+            students apply the lesson? Help our others! Share your story so that 
+            educators (or anyone who needs a good story!) can benefit from yours.
+        </p>
+
+<?php include "footer.php"; ?>
