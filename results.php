@@ -1,5 +1,7 @@
 <?php
 
+include 'header.php';
+
 $title = htmlspecialchars($_POST['title']);
 if (!empty($_POST['topic'])){
     $topics = $_POST['topic'];
@@ -25,3 +27,5 @@ if (!empty($topics)){
     }
     echo ".</p> ";
 }
+
+include "footer.php";
