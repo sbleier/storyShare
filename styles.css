@@ -1,2 +1,16 @@
 @charset "utf-8";
 
+html{
+  color: rgb(0, 74, 143);
+  background-color: white;
+  font-family: Sanchez, slab-serif;
+}
+
+h1{
+  font-size: 3em;
+}
+
+
+
+
+
