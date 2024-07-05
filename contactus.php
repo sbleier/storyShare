@@ -1,7 +1,7 @@
-<?php
+<?php include "header.php"; ?>
 
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
+<h1>Contact Information: </h1>
+<p><a href="mailto:admin@storyshare.com">Email</a></p>
+<p><a href="tel:1234567890">Phone</a></p>
 
+<?php include "footer.php"; ?>
