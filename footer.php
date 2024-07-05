@@ -1,7 +1,7 @@
 <?php
 
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
+<p> &copy; 2024 - Sara Bleier, Deborah Schonkopf, Tova Krupka </p>
+<p><a href = "contactus.php">Contact Us</a></p>
 
+</body>
+</html>
