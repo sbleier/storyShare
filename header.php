@@ -4,7 +4,9 @@
     </HEAD>
     
     <BODY>
-        <P><img src='logo.png' alt='logo' /> </P>
+        <header>
+            <?php include 'menu.php'; ?>
+        </header>  
        
-<?php include 'menu.php'; ?>
+
 <HR/>

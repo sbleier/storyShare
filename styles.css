@@ -3,7 +3,7 @@
 html{
   color: rgb(0, 74, 143);
   background-color: white;
-  font-family: Sanchez, slab-serif;
+  font-family: Sanchez, "slab-serif";
 }
 
 h1{
@@ -17,15 +17,25 @@ body,  p{
 ul{
     font-size: 2em;
     font-famiy: Sanchez, slabs-serif;
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+}
+
+.menu-item {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item img {
+    max-height: 120px;
 }
 
 ul a:hover{
     background-color:rgb(0, 74, 143);
     color: white;
 }
-
-
-
-
-
-
