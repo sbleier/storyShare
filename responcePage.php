@@ -1,4 +1,5 @@
 <?php
+include "header.php"; 
 session_start();
 
 $valid_usernames = ['user1', 'user2', 'user3'];
@@ -28,3 +29,4 @@ if ($valid_login) {
 } else {
   echo "Invalid username or password.";
 }
+include "footer.php"; 
