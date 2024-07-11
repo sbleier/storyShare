@@ -28,4 +28,3 @@ if ($valid_login) {
 } else {
   echo "Invalid username or password.";
 }
-?>
