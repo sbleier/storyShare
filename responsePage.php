@@ -18,6 +18,7 @@ if (in_array($username, $valid_usernames)) {
 }
 
 $_SESSION['logged_in'] = $valid_login;
+$_SESSION['username'] = $username;
 
 if ($valid_login) {
   setcookie('username', $username, time() + (86400 * 30), "/"); // Expires in 30 days
