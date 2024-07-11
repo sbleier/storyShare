@@ -1,5 +1,5 @@
 <?php
-include "header.php"; 
+include 'header.php'; 
 session_start();
 
 $valid_usernames = ['user1', 'user2', 'user3'];
@@ -21,12 +21,12 @@ $_SESSION['logged_in'] = $valid_login;
 
 if ($valid_login) {
   setcookie('username', $username, time() + (86400 * 30), "/"); // Expires in 30 days
-}
 
-if ($valid_login) {
   echo "Login successful! Welcome, " . $username . ".";
-  echo "<br><a href='content.php'>Go to Content Page</a>";
-} else {
+  echo "<br><a href='contentPage.php'>Go to Content Page</a>";
+} 
+else {
   echo "Invalid username or password.";
 }
-include "footer.php"; 
+
+include 'footer.php'; 
