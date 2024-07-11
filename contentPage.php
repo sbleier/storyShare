@@ -1,9 +1,10 @@
 <?php
 include "header.php"; 
+
 session_start();
 if (isset($_SESSION['username'])) {
   $username = $_SESSION['username'];
-  echo "Hello, $username!";
+  echo "Hello, " .  $username . "!";
 } else {
   echo 'Error: You are not logged in';
 }
@@ -11,7 +12,7 @@ if (isset($_SESSION['username'])) {
 ?>
 
 <form method="post" action="responcePage.php">
-  <input type="submit" value="Submit">
+    <button type="submit" value="Submit">Go Back</button>
 </form>
 
 <?php include "footer.php"; ?>
