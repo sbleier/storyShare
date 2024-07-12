@@ -11,8 +11,6 @@ if (isset($_SESSION['username'])) {
 
 ?>
 
-<form method="post" action="responcePage.php">
-    <button type="submit" value="Submit">Go Back</button>
-</form>
+<button><a href="index.php">Go to Home Page</a></button>
 
 <?php include "footer.php"; ?>
