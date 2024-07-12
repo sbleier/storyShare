@@ -7,7 +7,7 @@
     <input type="text" name="username" id="username" required />
     <br>
     <label for="password">Password:</label><br>
-    <input type="password" name="passworkd" id="password" required />
+    <input type="password" name="password" id="password" required />
     <br>
     <button type="submit" value="login">Submit</button>
 </form>
