@@ -2,20 +2,33 @@
 session_start();
 include 'header.php'; 
 
+//code that tells error information if not working (REMOVE before finish project)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-$valid_usernames = ['user1', 'user2', 'user3'];
-$valid_passwords = ['password1', 'password2', 'password3'];
-
+//set variables using login.php form
 $username = isset($_POST['username']) ? trim($_POST['username']) : '';
 $password = isset($_POST['password']) ? trim($_POST['password']) : '';
 
-$valid_login = false;
+//link to file that connects to database
+require 'dhb.Inc';
 
-if (in_array($username, $valid_usernames)) {
-  $index = array_search($username, $valid_usernames);
-  if ($password === $valid_passwords[$index]) {
+//search database for username and password variables
+$squl = "SELECT username FROM AuthorizedUsers WHERE username ='$username' AND password = '$password'";
+$result = mysqli_query($conn, $squl);
+
+//error handling 
+if (!$result) {
+    die("Query failed: " . mysqli_error($conn));
+}
+
+
+$valid_login=false;
+
+//checks if database has username and password matches
+if (mysqli_num_rows($result) > 0) {
     $valid_login = true;
-  }
 }
 
 $_SESSION['logged_in'] = $valid_login;
