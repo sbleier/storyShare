@@ -12,13 +12,17 @@
               <label for="email">Email:*</label>
               <input type="email" id="email" name="email" placeholder="story@example.com" required />
                  <br>
+              <input type="checkbox" id="show_email" name="show_email" value="show_email"/>
+                    <label for="show_email">Share Email with Users?</label><br> 
               <label for="position">Position*</label><br>
-              <select name="Position" id="position" required>
-                  <option value="teacher/rebbi">Teacher/Rebbi</option>
-                  <option value="principal">Principal</option>
-                  <option value="parent">Parent</option>
-                  <option value="student">Student</option>
-                  <option value="other">Other</option>
+              <select name="position" id="position" required>
+                  <option value="1">Teacher</option>
+                  <option value="2">Rebbi</option>
+                  <option value="3">Principal</option>
+                  <option value="4">Parent</option>
+                  <option value="5">Student</option>
+                  <option value="6">Curriculum Coordinator</option>
+                  <option value="7">Other</option>
               </select>
             </fieldset>
            
@@ -65,3 +69,5 @@
         </form>
     
 <?php include "footer.php"; ?>
+
+
