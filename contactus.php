@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
   <input type="email" name="email" id="email" required><br><br>
   <label for="message">Message:</label>
   <textarea name="message" id="message" rows="5" required></textarea><br><br>
-  <h2> we will try to get back to you as soon as possible</h2>
+
   <button type="submit" name="submit">Send Message</button>
 </form>
 
