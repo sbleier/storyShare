@@ -38,25 +38,28 @@ if ($valid_login) {
   setcookie('username', $username, time() + (86400 * 30), "/"); // Expires in 30 days
 
 echo "Login successful! Welcome, " . htmlspecialchars($username) . "!";
-    $story_query = "SELECT * FROM stories"; // Replace with your actual query
-    $story_result = mysqli_query($conn, $story_query);
+   
+//    $story_query = "SELECT * FROM stories"; 
+//    $story_result = mysqli_query($conn, $story_query);
+//
+//    if (mysqli_num_rows($story_result) > 0) {
+//      echo "<h2>Stories:</h2>";
+//      while ($row = mysqli_fetch_assoc($story_result)) {
+//        // Access story data and display them within HTML elements
+//        $title = $row["title"];
+//        $author = $row["author"];
+//        $content = $row["content"];
+//
+//        echo "<div class='story'>";
+//        echo "<h4>$title - <em>$author</em></h3>";
+//        echo "<p>$content</p>";
+//        echo "</div>";
+//      }
+//    } else {
+//      echo "No stories found";
+//    }
 
-    if (mysqli_num_rows($story_result) > 0) {
-      echo "<h2>Stories</h2>";
-      while ($row = mysqli_fetch_assoc($story_result)) {
-        // Access story data and display them within HTML elements
-        $title = $row["title"];
-        $content = $row["content"];
-
-        echo "<div class='story'>";
-        echo "<h3>$title</h3>";
-        echo "<p>$content</p>";
-        echo "</div>";
-      }
-    } else {
-      echo "No stories found";
-    }
-  echo "<br><a href='contentPage.php'>Go to Content Page</a>";
+  echo "<br><a href='contentPage.php'>See Submitted Stories</a>";
 } 
 else {
   echo "Invalid username or password.";
