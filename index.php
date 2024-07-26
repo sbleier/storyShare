@@ -17,7 +17,6 @@
        flex: 1;
        padding: 20px;
        width: 30vw;
-       font-size: 20px;
     }
     div#slideshow {
         flex: 1;
