@@ -31,13 +31,10 @@ $selectedTopics = isset($_POST['topic']) ? $_POST['topic'] : [];
 $topicIdsArray = [];
 
 //foreach loops that fills the topic_ids array with the correct ids using the variable to match topic_name with topic_id
-foreach ($selectedTopics as $topicName) {
-    $sql = "SELECT topic_id FROM topics WHERE topic_name = '$topicName'";
-    $result = mysqli_query($conn, $sql);
-    
-    if ($result && $row = mysqli_fetch_assoc($result)) {
-        $topicIdsArray[] = $row['topic_id'];
-    }
+foreach ($selectedTopics as $topicId) {
+    $topicId = intval($topicId); //convert to integer
+
+    $topicIdsArray[] = $topicId; //append topic ID to the array
 }
 
 //covert topic_ids array to json because that's what's used in stories table
