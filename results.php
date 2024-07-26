@@ -17,7 +17,7 @@ $authorName = (isset($_POST['first_name']) ? trim($_POST['first_name']) : '') . 
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 
 //showemail is a variable that works like a boolean - if the user doesn't click on the checkbox to show it, it will be set to 0 ('false')
-$showEmail = isset($_POST['show_email']) ? 1 : 0;
+$showEmail = isset($_POST['show_email']) ? true : false;
 
 //the select values in the form are numbers that refer to the position_id in the positions table
 $positionId= isset($_POST['position']) ? intval($_POST['position']) : 0;
