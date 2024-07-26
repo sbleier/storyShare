@@ -53,8 +53,11 @@ $result_positions = $conn->query($sql_positions);
             if ($result_topics->num_rows > 0) {
                 // Output data of each row
                 while($row = $result_topics->fetch_assoc()) {
-                    echo '<input type="checkbox" id="' . htmlspecialchars($row["value"]) . '" name="topic[]" value="' . htmlspecialchars($row["value"]) . '" />';
-                    echo '<label for="' . htmlspecialchars($row["value"]) . '">' . htmlspecialchars($row["name"]) . '</label><br>';
+                     $topicId = htmlspecialchars($row["topic_id"]);
+                     $topicName = htmlspecialchars($row["topic_name"]);
+                       
+                    echo '<input type="checkbox"' . 'id="' . $topicName . '" name="topic[]" value="' . $topicId . '" />';
+                    echo '<label for="' . $topicName . '">' . $topicName . '</label><br>';
                 }
             } else {
                 echo "No topics available.";
