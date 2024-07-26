@@ -13,7 +13,7 @@ error_reporting(E_ALL);
 //set variables using story_submit form
 //when applicable, variables are first trimmed before being assigned
 //authorName is fName and lName put together
-$authorName = (isset($_POST['first_name']) ? trim($_POST['first_name']) : '') . ' ' . (isset($_POST['lName']) ? trim($_POST['last_name']) : '');
+$authorName = (isset($_POST['first_name']) ? trim($_POST['first_name']) : '') . ' ' . (isset($_POST['last_name']) ? trim($_POST['last_name']) : '');
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 
 //showemail is a variable that works like a boolean - if the user doesn't click on the checkbox to show it, it will be set to 0 ('false')
