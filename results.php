@@ -53,7 +53,7 @@ $query = "INSERT INTO stories(title, author, content,  author_email, show_email,
 
 //if it works sends successful message
 if(mysqli_query($conn, $query)){
-    echo "<p>Thank you for submitting your story \"" . $title . "\"<br>";
+    echo "<p>Thank you for submitting your story \"" . $title . "\".<br>";
     echo "We may be in touch with you regarding clarifications on the story.";
 }
 
