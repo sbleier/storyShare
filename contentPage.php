@@ -36,6 +36,8 @@ if (isset($_POST['approve_story'])) {
         $title = $row["title"];
         $author = $row["author"];
         $content = $row["content"];
+        $author_email = $row["author_email"];
+        $show_email = $row["show_email"];
         $is_approved = $row["is_approved"];
         $topic_ids = json_decode($row["topic_ids"], true);
         
@@ -58,14 +60,17 @@ if (isset($_POST['approve_story'])) {
 
         if (!$is_approved){
             echo "<hr><p class='story'>";
-            echo "<strong>$title - <em>$author</em></strong>";
-            echo "<br>$content</p>";
+            echo "<h4>$title</h4>";
+            echo "<strong>Author: </strong>$author";
+                if ($show_email)
+                    echo " - <em>$author_email</em>";
+            echo "<blockquote>$content</blockquote></p>";
             echo $topics_display;
             echo "<form method='post' style='display:inline;'>
                     <input type='hidden' name='story_id' value='$storyId'>
                     <button type='submit' name='approve_story' class='btn btn-primary'>Approve Story</button>
                   </form>";
-            echo "</div><br>";
+            echo "</div>";
          } 
       
       }
