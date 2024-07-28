@@ -22,17 +22,22 @@ if (isset($_SESSION['username'])) {
         $title = $row["title"];
         $author = $row["author"];
         $content = $row["content"];
+        $is_approved = $row["is_approved"];
 
-        echo "<div class='story'>";
-        echo "<h4>$title - <em>$author</em></h3>";
-        echo "<p>$content</p>";
-        echo "</div>";
+        if (!$is_approved){
+            echo "<p class='story'>";
+            echo "<strong>$title - <em>$author</em></strong>";
+            echo "<br>$content</p>";
+            echo "</div>";
+         } 
+      
       }
     } else {
       echo "No stories found";
     }
+    
 
     ?>
-<button><a href="index.php">Go to Home Page</a></button>
+<button class="btn btn-primary"><a href="index.php">Go to Home Page</a></button>
 
 <?php include "footer.php"; ?>
