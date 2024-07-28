@@ -106,3 +106,14 @@ ul a:hover{
   .contact-info p {
     margin: 0.5em 0;
   }
+
+@media (min-width: 700px) {
+    #submission-fields {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 25px 0;
+    }
+    fieldset {
+        min-width: 45%;
+    }
+}
