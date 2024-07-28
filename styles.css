@@ -1,9 +1,12 @@
 @charset "utf-8";
 
+*{
+  font-family: Sanchez, "slab-serif";
+
+}
 html{
   color: rgb(0, 74, 143);
   background-color: white;
-  font-family: Sanchez, "slab-serif";
 }
 
 h1{
@@ -16,7 +19,6 @@ body,  p{
 
 ul{
     font-size: 2em;
-    font-family: Sanchez, slabs-serif;
     display: flex;
     list-style-type: none;
     align-items: center;
@@ -71,3 +73,36 @@ ul a:hover{
     background-color:rgb(0, 74, 143);
     color: white;
 }
+
+
+/*Contact form*/
+  .form-group {
+    margin-bottom: 1em;
+  }
+  .form-input {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.2em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .btn {
+    background-color: #cdcdcd;
+    color: white;
+    padding: 0.7em 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: #454545;
+  }
+  .success {
+    color: green;
+  }
+  .error {
+    color: red;
+  }
+  .contact-info p {
+    margin: 0.5em 0;
+  }
