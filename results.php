@@ -13,16 +13,21 @@ error_reporting(E_ALL);
 //set variables using story_submit form
 //when applicable, variables are first trimmed before being assigned
 //authorName is fName and lName put together
-$authorName = (isset($_POST['first_name']) ? trim($_POST['first_name']) : '') . ' ' . (isset($_POST['last_name']) ? trim($_POST['last_name']) : '');
-$email = isset($_POST['email']) ? trim($_POST['email']) : '';
+$authorName = (isset($_POST['first_name']) ? ucwords(trim($_POST['first_name'])) : '') . ' ' . (isset($_POST['last_name']) ? ucwords(trim($_POST['last_name'])) : '');
+$email = isset($_POST['email']) ? strtolower(trim($_POST['email'])) : '';
 
 //showemail is a variable that works like a boolean - if the user doesn't click on the checkbox to show it, it will be set to 0 ('false')
 $showEmail = isset($_POST['show_email']) ? true : false;
 
 //the select values in the form are numbers that refer to the position_id in the positions table
-$positionId= isset($_POST['position']) ? intval($_POST['position']) : 0;
-$title= isset($_POST['title']) ? trim($_POST['title']) : '';
-$story= isset($_POST['story']) ? trim($_POST['story']) : '';
+$positionId = isset($_POST['position']) ? intval($_POST['position']) : 0;
+
+// Sanitize and format the title
+$title = isset($_POST['title']) ? mysqli_real_escape_string($conn, ucwords(trim($_POST['title']))) : '';
+
+// Sanitize and format the story
+$story = isset($_POST['story']) ? mysqli_real_escape_string($conn, ucfirst(trim($_POST['story']))) : '';
+
 
 //this is array of checked topics that will be empty if no topics chosen
 $selectedTopics = isset($_POST['topic']) ? $_POST['topic'] : [];
