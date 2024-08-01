@@ -37,6 +37,10 @@ function handleFormSubmission(req, res) {
     });
 }
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the StoryShare Contact Form!');
+});
+
 app.post('/submit', handleFormSubmission);
 
 app.listen(port, () => {
