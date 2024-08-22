@@ -17,7 +17,7 @@ $authorName = (isset($_POST['first_name']) ? ucwords(trim($_POST['first_name']))
 $email = isset($_POST['email']) ? strtolower(trim($_POST['email'])) : '';
 
 //showemail is a variable that works like a boolean - if the user doesn't click on the checkbox to show it, it will be set to 0 ('false')
-$showEmail = isset($_POST['show_email']) ? true : false;
+$showEmail = isset($_POST['show_email']) ? 1 : 0;
 
 //the select values in the form are numbers that refer to the position_id in the positions table
 $positionId = isset($_POST['position']) ? intval($_POST['position']) : 0;
@@ -29,27 +29,26 @@ $title = isset($_POST['title']) ? mysqli_real_escape_string($conn, ucwords(trim(
 $story = isset($_POST['story']) ? mysqli_real_escape_string($conn, ucfirst(trim($_POST['story']))) : '';
 
 
-//this is array of checked topics that will be empty if no topics chosen
-$selectedTopics = isset($_POST['topic']) ? $_POST['topic'] : [];
-
-//this is an empty array to fill with the topic_ids
-$topicIdsArray = [];
-
-//foreach loops that fills the topic_ids array with the correct ids using the variable to match topic_name with topic_id
-foreach ($selectedTopics as $topicId) {
-    $topicId = intval($topicId); //convert to integer
-
-    $topicIdsArray[] = $topicId; //append topic ID to the array
-}
-
-//covert topic_ids array to json because that's what's used in stories table
-$topicIdsJson = json_encode($topicIdsArray);
-
 /*query to insert. 
  * NOTE WHAT IS NOT INSERTED:
  * story_id is automated, is_approved is defaulted to false/0 and has to changed by admins
  * date_posted is default to current time
  */
+$selectedTopics = isset($_POST['topic']) ? $_POST['topic'] : [];
+
+// This is an empty array to fill with the topic_ids as strings
+$topicIdsArray = [];
+
+// Foreach loop that fills the topic_ids array with the correct ids as strings
+foreach ($selectedTopics as $topicId) {
+    $topicId = strval($topicId); // Convert to string
+
+    $topicIdsArray[] = $topicId; // Append topic ID (as a string) to the array
+}
+
+// Convert topic_ids array to JSON
+$topicIdsJson = json_encode($topicIdsArray);
+
 $query = "INSERT INTO stories(title, author, content,  author_email, show_email, topic_ids, position_id) "
         . "VALUES ('$title', '$authorName', '$story', '$email', '$showEmail', '$topicIdsJson', '$positionId')";
 
@@ -59,26 +58,13 @@ if(mysqli_query($conn, $query)){
     echo "We may be in touch with you regarding clarifications on the story.";
 }
 
-
-
-//i commented this out because didn't have time/patience to connect it to proper database
-/*
-if (!empty($selectedTopics)){
-    echo "<br>Check out some other stories we have on the "; 
-
-    if (is_array($topics) && count($topics) == 2){
-        echo "topics of ";
-        echo implode(" and ", $topics);
-    } 
-    else if (is_array($topics) && count($topics) > 2){
-        echo "topics of ";
-        echo implode(", and ", $topics);
-    }
-    else {
-        echo "topic of";
-        echo $topics;
-    }
-    echo ".</p> ";
+else {
+    echo "Error: " . mysqli_error($conn);
 }
-*/
+
+
+
+
+
+
 include "footer.php";
